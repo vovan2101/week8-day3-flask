@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Create new post {% endblock title %}
+
+{% block content %}
+
+    <h2 class="text-center">Create a new post</h2>
+    
+    <form method="post">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            {{ form.title.label }}
+            {{ form.title(class='form-control', placeholder='Enter Title') }}
+
+            {{ form.body.label }}
+            {{ form.body(class='form-control', placeholder='Enter Body') }}
+
+            {{ form.submit(class='btn btn-secondary w-100 mt-3') }}
+        </div>
+    </form>
+
+{% endblock content %}
